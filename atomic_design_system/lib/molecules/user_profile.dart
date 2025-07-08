@@ -14,17 +14,18 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
         CircleAvatar(
           radius: avatarSize / 2,
-          backgroundImage: AssetImage(avatarPath),
+          backgroundImage:NetworkImage(avatarPath),
         ),
-        const SizedBox(width: 8.0),
+        const SizedBox(height: 8.0),
         Text(
           name,
           style: const TextStyle(
             fontSize: 16.0,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),

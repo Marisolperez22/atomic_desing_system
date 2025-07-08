@@ -23,5 +23,8 @@ class AtomicSystemColorsFoundation {
 
   /// The color to indicate favorite (refer to [AtomicDesignColors] for details).
   static const Color favoriteColor = AtomicDesignColors.favorite;
+
+  /// The color to indicate favorite (refer to [AtomicDesignColors] for details).
+  static const Color appBarColor = AtomicDesignColors.deepPurple;
   
 }

@@ -20,16 +20,15 @@ final Function()? onPressed;
     return ElevatedButton(
       onPressed: isDisabled ? null : onPressed,
       style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         backgroundColor: AtomicSystemColorsFoundation.colorButtonPrimary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
       child: Text(
         text,
         style: const TextStyle(
-          fontSize: AtomicDesignTypo.fontSizeBodyText,
           color: Colors.white,
           fontWeight: FontWeight.bold,
+          fontSize: AtomicDesignTypo.fontSizeH6,
           fontFamily: AtomicDesignTypo.familyHeadings,
         ),
       ),

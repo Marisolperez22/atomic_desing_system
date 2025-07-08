@@ -1,9 +1,12 @@
+import 'package:example/screens/home.dart';
+import 'package:example/screens/molecules.dart';
+import 'package:example/screens/organisms.dart';
 import 'package:flutter/material.dart';
 
 import 'package:atomic_design_system/foundations/themes/atomic_system_theme.dart';
 import 'config/routes/showcase_routes.dart';
 import 'screens/atoms.dart';
-import 'screens/home.dart';
+import 'screens/home_screen.dart';
 
 class ShowcaseApp extends StatelessWidget {
   const ShowcaseApp({super.key});
@@ -16,11 +19,13 @@ class ShowcaseApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case ShowcaseRoutes.home:
-            return MaterialPageRoute(builder: (context) => const HomePage());
-          case ShowcaseRoutes.atoms:
+            return MaterialPageRoute(builder: (context) => const HomeScreen());
+             case ShowcaseRoutes.atoms:
             return MaterialPageRoute(builder: (context) => const AtomsPage());
-          default:
-            return MaterialPageRoute(builder: (context) => const HomePage());
+               case ShowcaseRoutes.molecules:
+            return MaterialPageRoute(builder: (context) => const Molecules());
+            case ShowcaseRoutes.organisms:
+            return MaterialPageRoute(builder: (context) => const Organisms());
         }
       },
     );

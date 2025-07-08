@@ -20,4 +20,6 @@ class AtomicDesignColors {
   static const light = Color(0xFFF2F2F2);
 
     static const lightGray = Color(0xFFcacaca);
+
+    static const deepPurple = Color(0xFF6c63ff);
 }
