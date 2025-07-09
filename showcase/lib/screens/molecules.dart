@@ -10,12 +10,12 @@ class Molecules extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 90,
-        backgroundColor: AtomicDesignColors.dark, // Change the color to white
+        backgroundColor: AtomicDesignColors.dark,
         leading: IconButton(
           icon: const Icon(
-            Icons.undo,
+            Icons.arrow_back_ios_rounded,
             color: Colors.white,
-          ), // Change the icon to a curved arrow and set the color to white
+          ), 
           onPressed: () {
             Navigator.of(context).pop();
           },
