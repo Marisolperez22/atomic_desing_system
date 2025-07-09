@@ -1,7 +1,7 @@
 name: atomic_design_system
 description: "Un sistema de diseño en Flutter basado en los principios Atomic Design"
 version: 0.0.1
-homepage:
+homepage: https://github.com/Marisolperez22/atomic_desing_system.git
 
 environment:
   sdk: ^3.7.2
