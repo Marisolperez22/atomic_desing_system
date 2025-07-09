@@ -6,6 +6,9 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SearchPage(onSearchChanged: (value) {}, onSearchPressed: () {});
+    return SearchPage(
+      onSearchChanged: (value) => debugPrint(value),
+      onSearchPressed: () => debugPrint('Button pressed'),
+    );
   }
 }

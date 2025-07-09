@@ -7,8 +7,8 @@ class BasicLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasicLayoutTemplate(
-        body: Text('Basic layout template'),
-        title: 'Basic layout template',
+      body: Text('Basic layout template'),
+      title: 'Basic layout template',
     );
   }
 }

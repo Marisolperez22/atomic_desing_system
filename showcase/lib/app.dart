@@ -1,5 +1,3 @@
-import 'package:atomic_design_system/pages/home_page.dart';
-import 'package:atomic_design_system/pages/product_detail_page.dart';
 import 'package:example/screens/molecules.dart';
 import 'package:example/screens/organisms.dart';
 import 'package:example/screens/pages/pages_system.dart';
@@ -9,9 +7,8 @@ import 'package:atomic_design_system/foundations/themes/atomic_system_theme.dart
 import 'config/routes/showcase_routes.dart';
 import 'screens/home_screen.dart';
 import 'screens/atoms.dart';
-import 'screens/pages.dart';
 import 'screens/pages/home_page.dart';
-import 'screens/pages/product_detail_page.dart';
+import 'screens/pages/product_detail.dart';
 import 'screens/pages/search.dart';
 import 'screens/templates/basic_layout_template.dart';
 import 'screens/templates/scrollable_page.dart';
@@ -37,8 +34,6 @@ class ShowcaseApp extends StatelessWidget {
             return MaterialPageRoute(builder: (context) => const Organisms());
           case ShowcaseRoutes.templates:
             return MaterialPageRoute(builder: (context) => const Templates());
-          case ShowcaseRoutes.pages:
-            return MaterialPageRoute(builder: (context) => const Pages());
           case ShowcaseRoutes.basicLayout:
             return MaterialPageRoute(builder: (context) => const BasicLayout());
           case ShowcaseRoutes.scrollableTemplate:
@@ -50,18 +45,13 @@ class ShowcaseApp extends StatelessWidget {
           case ShowcaseRoutes.homepage:
             return MaterialPageRoute(
               builder: (context) => const HomePageSystem(),
-              
             );
-            case ShowcaseRoutes.productDetailRoute:
+          case ShowcaseRoutes.productDetailRoute:
             return MaterialPageRoute(
               builder: (context) => const ProductDetail(),
-              
             );
-            case ShowcaseRoutes.search:
-            return MaterialPageRoute(
-              builder: (context) => const Search(),
-              
-            );
+          case ShowcaseRoutes.search:
+            return MaterialPageRoute(builder: (context) => const Search());
         }
         return null;
       },

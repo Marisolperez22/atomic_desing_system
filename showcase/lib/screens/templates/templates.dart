@@ -1,5 +1,5 @@
-import 'package:atomic_design_system/atomic_design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:atomic_design_system/atomic_design_system.dart';
 
 import '../../config/routes/showcase_routes.dart';
 
@@ -9,37 +9,32 @@ class Templates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: TitleAppbar(title: 'Atomic Design System',)
-      ),
-
+      appBar: AppBar(title: TitleAppbar(title: 'Atomic Design System')),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: ListView(
           children: [
             MainCard(
-              buttonTitle: 'Saber más',
-              svgImageUrl: 'assets/images/atom.svg',
-              onPressed: () {
-                Navigator.of(context).pushNamed(ShowcaseRoutes.basicLayout);
-              },
+              buttonTitle: 'Ver más',
               textContent: 'Basic Layout Template',
+              svgImageUrl: 'assets/images/atom.svg',
+              onPressed:
+                  () => Navigator.of(
+                    context,
+                  ).pushNamed(ShowcaseRoutes.basicLayout),
             ),
             MainCard(
-              buttonTitle: 'Saber más',
-              svgImageUrl: 'assets/images/atom.svg',
-              onPressed: () {
-                Navigator.of(context).pushNamed(ShowcaseRoutes.scrollableTemplate);
-              },
+              buttonTitle: 'Ver más',
               textContent: 'Scrollable Template',
+              svgImageUrl: 'assets/images/atom.svg',
+              onPressed:
+                  () => Navigator.of(
+                    context,
+                  ).pushNamed(ShowcaseRoutes.scrollableTemplate),
             ),
-           
           ],
         ),
       ),
     );
-      
-       
   }
 }
-

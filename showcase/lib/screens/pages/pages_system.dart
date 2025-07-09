@@ -8,44 +8,38 @@ class PagesSystem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: TitleAppbar(title: 'Atomic Design System',)
-      ),
-
+      appBar: AppBar(title: TitleAppbar(title: 'Atomic Design System')),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: ListView(
           children: [
             MainCard(
-              buttonTitle: 'Saber más',
-              svgImageUrl: 'assets/images/atom.svg',
-              onPressed: () {
-                Navigator.of(context).pushNamed(ShowcaseRoutes.homepage);
-              },
+              buttonTitle: 'Ver más',
               textContent: 'Home Page',
+              svgImageUrl: 'assets/images/atom.svg',
+              onPressed:
+                  () =>
+                      Navigator.of(context).pushNamed(ShowcaseRoutes.homepage),
             ),
             MainCard(
-              buttonTitle: 'Saber más',
-              svgImageUrl: 'assets/images/atom.svg',
-              onPressed: () {
-                Navigator.of(context).pushNamed(ShowcaseRoutes.productDetailRoute);
-              },
+              buttonTitle: 'Ver más',
               textContent: 'Product detail Page',
+              svgImageUrl: 'assets/images/atom.svg',
+              onPressed:
+                  () => Navigator.of(
+                    context,
+                  ).pushNamed(ShowcaseRoutes.productDetailRoute),
             ),
             MainCard(
-              buttonTitle: 'Saber más',
-              svgImageUrl: 'assets/images/atom.svg',
-              onPressed: () {
-                Navigator.of(context).pushNamed(ShowcaseRoutes.search);
-              },
+              buttonTitle: 'Ver más',
               textContent: 'Search Page',
+              svgImageUrl: 'assets/images/atom.svg',
+              onPressed:
+                  () => Navigator.of(context).pushNamed(ShowcaseRoutes.search),
             ),
-           
           ],
         ),
       ),
     );
-      
-       
   }
 }

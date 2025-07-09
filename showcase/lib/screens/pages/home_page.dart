@@ -6,8 +6,6 @@ class HomePageSystem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomePage(
-      svgImageUrl: 'assets/images/molecules.svg',
-    );
+    return const HomePage(svgImageUrl: 'assets/images/molecules.svg');
   }
 }

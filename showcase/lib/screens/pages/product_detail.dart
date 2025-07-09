@@ -7,9 +7,9 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProductDetailPage(
+      productName: 'Camiseta',
       imageUrl:
           'https://www.lazo.com.co/cdn/shop/files/CAMISETAMODIFICADA1_2.png?v=1739452423',
-      productName: 'Camiseta',
     );
   }
 }

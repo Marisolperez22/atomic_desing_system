@@ -11,10 +11,12 @@ class Organisms extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Custom AppBar',
+        rightIconOnPressed: () {},
         leftIcon: Icons.arrow_back_ios_rounded,
         rightIcon: Icons.mark_chat_unread_outlined,
-        leftIconOnPressed: () => Navigator.of(context).pushReplacementNamed(ShowcaseRoutes.home),
-        rightIconOnPressed: () {},
+        leftIconOnPressed:
+            () =>
+                Navigator.of(context).pushReplacementNamed(ShowcaseRoutes.home),
       ),
       body: Container(
         decoration: const BoxDecoration(color: AtomicDesignColors.dark),
@@ -25,23 +27,21 @@ class Organisms extends StatelessWidget {
             children: [
               Column(
                 children: [
-                   Column(
-                children: [
-                  Text(
-                    'Custom Bottom Navigation Bar',
-                    style: TextStyle(color: Colors.white),
+                  Column(
+                    children: [
+                      Text(
+                        'Custom Bottom Navigation Bar',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        padding: EdgeInsets.all(20),
+                        color: Colors.white,
+                        child: BarNavigationBottom(onBottomBarTap: () {}),
+                      ),
+                    ],
                   ),
-              SizedBox(height: 10),
-
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.white,
-                    child: BarNavigationBottom(onBottomBarTap: () {}),
-                  ),
-                ],
-              ),
-              SizedBox(height: 30),
-
+                  SizedBox(height: 30),
                   Row(
                     children: [
                       Expanded(
@@ -76,7 +76,6 @@ class Organisms extends StatelessWidget {
                   ),
                 ],
               ),
-             
             ],
           ),
         ),
