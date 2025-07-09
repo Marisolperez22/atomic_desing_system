@@ -1,9 +1,6 @@
 import 'package:atomic_design_system/atomic_design_system.dart';
-import 'package:atomic_design_system/atoms/buttons/favorite_button.dart';
 import 'package:atomic_design_system/tokens/atomic_system_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Molecules extends StatelessWidget {
   const Molecules({super.key});

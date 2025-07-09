@@ -1,14 +1,31 @@
-import 'package:atomic_design_system/atoms/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../atoms/buttons/primary_button.dart';
 import '../foundations/atomic_system_colors_foundation.dart';
 
+/// This widget provides a visually striking card that combines:
+/// - Primary content text
+/// - Action button
+/// - Decorative SVG image
+/// - Design-system compliant styling
+///
+/// See also:
+/// - [PrimaryButton], the action button component used
+/// - [AtomicSystemColorsFoundation], for color system reference
+/// - [SvgPicture], for SVG image rendering
 class MainCard extends StatelessWidget {
+  /// The main text content displayed in the card
   final String textContent;
+
+  /// The text displayed on the action button
   final String buttonTitle;
-  final dynamic Function()? onPressed;
+
+  /// The path to the SVG image asset
   final String svgImageUrl;
+
+  /// Callback when the action button is pressed
+  final dynamic Function()? onPressed;
 
   const MainCard({
     super.key,
@@ -46,9 +63,9 @@ class MainCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          right:50,
           top: 0,
           bottom: 0,
+          right: 50,
           child: SvgPicture.asset(svgImageUrl, height: 100),
         ),
       ],

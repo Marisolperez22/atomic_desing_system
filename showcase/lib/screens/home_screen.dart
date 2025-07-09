@@ -1,5 +1,4 @@
 import 'package:atomic_design_system/atomic_design_system.dart';
-import 'package:atomic_design_system/tokens/atomic_system_colors.dart';
 import 'package:example/config/routes/showcase_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Atomic Design System',
-         
-        ),
+        title: TitleAppbar(title: 'Atomic Design System',)
       ),
 
       body: Padding(
@@ -40,9 +36,25 @@ class HomeScreen extends StatelessWidget {
               buttonTitle: 'Saber más',
               svgImageUrl: 'assets/images/space.svg',
               onPressed: () {
-                Navigator.of(context).pushNamed(ShowcaseRoutes.organisms);
+                Navigator.of(context).pushReplacementNamed(ShowcaseRoutes.organisms);
               },
               textContent: 'Organisms',
+            ),
+             MainCard(
+              buttonTitle: 'Saber más',
+              svgImageUrl: 'assets/images/product.svg',
+              onPressed: () {
+                Navigator.of(context).pushNamed(ShowcaseRoutes.templates);
+              },
+              textContent: 'Templates',
+            ),
+            MainCard(
+              buttonTitle: 'Saber más',
+              svgImageUrl: 'assets/images/page.svg',
+              onPressed: () {
+                Navigator.of(context).pushNamed(ShowcaseRoutes.pagesSystem);
+              },
+              textContent: 'Pages',
             ),
           ],
         ),

@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../foundations/atomic_system_colors_foundation.dart';
 
+/// This widget provides a modern bottom navigation solution with:
+/// - Smooth icon transitions between outlined and filled states
+/// - Animated selection indicators
+/// - Customizable tap handler
+/// - Design-system compliant colors
+///
+/// See also:
+/// - [AnimatedSwitcher], for icon transition effects
+/// - [AtomicSystemColorsFoundation], for color system reference
 class BarNavigationBottom extends StatefulWidget {
+  /// Callback when any navigation item is tapped
+  ///
+  /// Can be used to trigger additional actions when navigation occurs.
+  /// The actual navigation state is managed internally by the widget.
   final void Function()? onBottomBarTap;
 
   const BarNavigationBottom({super.key, required this.onBottomBarTap});
@@ -26,8 +39,16 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildNavItem(Icons.home_outlined, Icons.home_rounded, 0),
-          _buildNavItem(Icons.shopping_bag_outlined, Icons.shopping_bag_rounded, 1),
-          _buildNavItem(Icons.notifications_none_rounded, Icons.notifications_rounded, 2),
+          _buildNavItem(
+            Icons.shopping_bag_outlined,
+            Icons.shopping_bag_rounded,
+            1,
+          ),
+          _buildNavItem(
+            Icons.notifications_none_rounded,
+            Icons.notifications_rounded,
+            2,
+          ),
           _buildNavItem(Icons.person_outline_rounded, Icons.person_rounded, 3),
         ],
       ),
@@ -54,16 +75,16 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
               color: isSelected ? Colors.white : Colors.white,
             ),
           ),
-            const SizedBox(height: 4),
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              width: isSelected ? 8 : 0,
-              height: isSelected ? 8 : 0,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AtomicSystemColorsFoundation.selectionColor,
-              ),
+          const SizedBox(height: 4),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            width: isSelected ? 8 : 0,
+            height: isSelected ? 8 : 0,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: AtomicSystemColorsFoundation.selectionColor,
             ),
+          ),
         ],
       ),
     );

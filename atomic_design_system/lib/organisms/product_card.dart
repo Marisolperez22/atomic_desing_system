@@ -5,6 +5,7 @@ import '../atoms/image_card.dart';
 import '../atoms/rating_icon.dart';
 import '../foundations/atomic_design_typo.dart';
 
+
 class ProductCard extends StatelessWidget {
   final String price;
   final String rating;
@@ -32,7 +33,7 @@ class ProductCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                FavoriteButton(favoriteOnPressed: () {}),
+                FavoriteButton(favoriteOnPressed: favoriteOnPressed),
                 ImageCard(imageUrl: imageUrl),
               ],
             ),

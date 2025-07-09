@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 
 class AtomicDesignColors {
   AtomicDesignColors._();
 
-   /// The primary dark color of the app.
+  /// The primary dark color of the app.
   static const dark = Color(0xFF101726);
 
   /// The selection color of the app.
@@ -16,10 +15,12 @@ class AtomicDesignColors {
   /// The secondary color of the app.
   static const secondary = Color(0xFFF25E3D);
 
-    /// The primary light color of the app.
+  /// The primary light color of the app.
   static const light = Color(0xFFF2F2F2);
 
-    static const lightGray = Color(0xFFcacaca);
+  /// The gey light color of the app.
+  static const lightGray = Color(0xFFcacaca);
 
-    static const deepPurple = Color(0xFF6c63ff);
+  /// The deep purple color of the app for backgrounds.
+  static const deepPurple = Color(0xFF6c63ff);
 }

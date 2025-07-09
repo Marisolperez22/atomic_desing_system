@@ -11,8 +11,8 @@ class AtomicSystemColorsFoundation {
     /// The cards background color  (refer to [AtomicDesignColors] for details).
   static const Color cardBackgroundColor = AtomicDesignColors.light;
 
+  /// The color for light color texts (refer to [AtomicDesignColors] for details).
   static const Color lightText = AtomicDesignColors.lightGray;
-
 
   /// The color to show a selection (refer to [AtomicDesignColors] for details).
   static const Color selectionColor = AtomicDesignColors.selection;

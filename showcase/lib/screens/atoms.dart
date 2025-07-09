@@ -1,11 +1,6 @@
 import 'package:atomic_design_system/atomic_design_system.dart';
-import 'package:atomic_design_system/atoms/buttons/favorite_button.dart';
-import 'package:atomic_design_system/atoms/image_card.dart';
-import 'package:atomic_design_system/atoms/rating_icon.dart';
 import 'package:atomic_design_system/tokens/atomic_system_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AtomsPage extends StatelessWidget {
   const AtomsPage({super.key});
@@ -15,12 +10,9 @@ class AtomsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 90,
-        backgroundColor: AtomicDesignColors.dark, // Change the color to white
+        backgroundColor: AtomicDesignColors.dark,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios_rounded,
-            color: Colors.white,
-          ), // Change the icon to a curved arrow and set the color to white
+          icon: const Icon(Icons.arrow_back_ios_rounded, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -101,8 +93,8 @@ class AtomsPage extends StatelessWidget {
 
                     onTap: () {},
                   ),
-                   ListTile(
-                    leading: TitleAppbar(title: 'Title',),
+                  ListTile(
+                    leading: TitleAppbar(title: 'Title'),
                     title: const Text(
                       'Title',
                       style: TextStyle(
@@ -229,8 +221,6 @@ class AtomsPage extends StatelessWidget {
 
                     onTap: () {},
                   ),
-                  
-                 
                 ],
               ),
             ),

@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../foundations/atomic_system_colors_foundation.dart';
 
+/// A styled card component with consistent dimensions and layout properties.
+///
+/// See also:
+/// - [AtomicSystemColorsFoundation.cardBackgroundColor], the default background color
+/// - [Image.network], the underlying image widget used
 class StyledCard extends StatelessWidget {
+  /// The URL of the image to display within the card
   final String imageUrl;
+
+  /// The background color of the card
   final Color? color;
 
   const StyledCard({
