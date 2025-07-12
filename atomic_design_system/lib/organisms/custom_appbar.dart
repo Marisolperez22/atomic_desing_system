@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 /// - [AppBar], the underlying Material widget
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// The title to display in the center of the app bar
-  final String title;
+  final dynamic title;
 
   /// The icon to display on the left side
   final IconData leftIcon;
@@ -44,7 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ButtonAppbar(icon: leftIcon, onPressed: leftIconOnPressed),
-          TitleAppbar(title: title),
+          title is String ? Text(title) : title as Widget,
           ButtonAppbar(icon: rightIcon, onPressed: rightIconOnPressed),
         ],
       ),
