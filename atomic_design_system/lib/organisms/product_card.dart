@@ -5,16 +5,17 @@ import '../atoms/image_card.dart';
 import '../atoms/rating_icon.dart';
 import '../foundations/atomic_design_typo.dart';
 
-
 class ProductCard extends StatelessWidget {
   final String price;
   final String rating;
   final String imageUrl;
   final String productName;
   final void Function()? favoriteOnPressed;
+  final void Function()? addToTheCart;
 
   const ProductCard({
     super.key,
+    required this.addToTheCart,
     required this.price,
     required this.rating,
     required this.imageUrl,
@@ -66,6 +67,8 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 5),
+            ElevatedButton(onPressed: addToTheCart, child: Text('Agregar al carrito')),
           ],
         ),
       ),

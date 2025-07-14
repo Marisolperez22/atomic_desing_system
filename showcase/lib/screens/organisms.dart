@@ -68,6 +68,7 @@ class Organisms extends StatelessWidget {
                           price: '100\$',
                           rating: '4.5',
                           favoriteOnPressed: () {},
+                          addToTheCart: (){},
                           imageUrl:
                               'https://www.kimashophn.com/cdn/shop/files/GRAVELA-WHPK-W5-A.png?v=1735942130&width=533',
                         ),
