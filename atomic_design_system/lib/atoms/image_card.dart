@@ -14,6 +14,6 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(imageUrl, width: 150);
+    return Image.network(imageUrl, width: 150, height: 120,);
   }
 }
