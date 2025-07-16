@@ -18,6 +18,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// The icon to display on the left side
   final IconData leftIcon;
 
+  final Color appBarColor;
+
   /// The icon to display on the right side
   final IconData rightIcon;
 
@@ -34,11 +36,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.rightIcon,
     required this.leftIconOnPressed,
     required this.rightIconOnPressed,
+    this.appBarColor = Colors.white,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: appBarColor,
       automaticallyImplyLeading: false,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
