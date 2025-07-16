@@ -32,13 +32,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                FavoriteButton(favoriteOnPressed: favoriteOnPressed),
-                ImageCard(imageUrl: imageUrl),
-              ],
-            ),
+            ImageCard(imageUrl: imageUrl),
             const SizedBox(height: 8),
             Text(
               productName,
@@ -69,7 +63,10 @@ class ProductCard extends StatelessWidget {
               ],
             ),
             SizedBox(height: 5),
-            ElevatedButton(onPressed: addToTheCart, child: Text('Agregar al carrito')),
+            ElevatedButton(
+              onPressed: addToTheCart,
+              child: Text('Agregar al carrito'),
+            ),
           ],
         ),
       ),
