@@ -11,13 +11,14 @@ import '../foundations/atomic_system_colors_foundation.dart';
 /// See also:
 /// - [AnimatedSwitcher], for icon transition effects
 /// - [AtomicSystemColorsFoundation], for color system reference
-import 'package:flutter/material.dart';
-
 class BarNavigationBottom extends StatefulWidget {
   /// Callback when any navigation item is tapped
-  final void Function(int)? onBottomBarTap;
+  ///
+  /// Can be used to trigger additional actions when navigation occurs.
+  /// The actual navigation state is managed internally by the widget.
+  final void Function()? onBottomBarTap;
 
-  const BarNavigationBottom({super.key, this.onBottomBarTap});
+  const BarNavigationBottom({super.key, required this.onBottomBarTap});
 
   @override
   State<BarNavigationBottom> createState() => _BarNavigationBottomState();
@@ -26,26 +27,10 @@ class BarNavigationBottom extends StatefulWidget {
 class _BarNavigationBottomState extends State<BarNavigationBottom> {
   int _currentIndex = 0;
 
-  // Nombres para cada ítem de navegación
-  final List<String> _itemTitles = [
-    'Inicio',
-    'Tienda',
-    'Categorías',
-    'Perfil',
-  ];
-
-  // Rutas correspondientes a cada ítem
-  final List<String> _routeNames = [
-    '/home',
-    '/shop',
-    '/categories',
-    '/profile',
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80, // Aumenté la altura para acomodar los títulos
+      height: 60,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         color: AtomicSystemColorsFoundation.primaryColor,
@@ -74,38 +59,20 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
     final isSelected = _currentIndex == index;
 
     return GestureDetector(
-      onTap: () {
-        setState(() => _currentIndex = index);
-        
-        // Navegación a la ruta correspondiente
-        Navigator.of(context).pushNamed(_routeNames[index]);
-        
-        // Opcional: llamar al callback si existe
-        if (widget.onBottomBarTap != null) {
-          widget.onBottomBarTap!(index);
-        }
-      },
+      onTap: () => setState(() => _currentIndex = index),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 300),
             transitionBuilder:
-                (child, animation) => ScaleTransition(scale: animation, child: child),
+                (child, animation) =>
+                    ScaleTransition(scale: animation, child: child),
             child: Icon(
               size: 24,
               isSelected ? activeIcon : icon,
               key: ValueKey<bool>(isSelected),
-              color: isSelected ? Colors.white : Colors.white.withOpacity(0.7),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            _itemTitles[index],
-            style: TextStyle(
-              color: isSelected ? Colors.white : Colors.white.withOpacity(0.7),
-              fontSize: 12,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+              color: isSelected ? Colors.white : Colors.white,
             ),
           ),
           const SizedBox(height: 4),
