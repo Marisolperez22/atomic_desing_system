@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ButtonAppbar(icon: leftIcon, onPressed: leftIconOnPressed),
-          title is String ? Text(title) : title as Widget,
+          title is String ? Text(title, style: TextStyle(fontWeight: FontWeight.bold),) : title as Widget,
           ButtonAppbar(icon: rightIcon, onPressed: rightIconOnPressed),
         ],
       ),

@@ -28,8 +28,8 @@ class ProductCard extends StatelessWidget {
       margin: const EdgeInsets.all(8), // Margen uniforme
       child: ConstrainedBox(
         constraints: const BoxConstraints(
-          minWidth: 150, // Ancho mínimo
-          maxWidth: 200, // Ancho máximo para evitar overflow
+          minWidth: 150, 
+          maxWidth: 200, 
         ),
         child: Padding(
           padding: const EdgeInsets.all(12),
@@ -38,14 +38,9 @@ class ProductCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min, // Para que la columna no ocupe más espacio del necesario
             children: [
               // Encabezado con imagen y botón de favoritos
-              Stack(
-                children: [
-                  ImageCard(
-                    imageUrl: imageUrl,
-                    height: 120, // Altura fija para la imagen
-                  ),
-                 
-                ],
+              ImageCard(
+                imageUrl: imageUrl,
+                height: 120, // Altura fija para la imagen
               ),
               const SizedBox(height: 8),
               // Nombre del producto con límite de líneas
