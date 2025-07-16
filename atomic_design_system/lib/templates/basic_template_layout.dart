@@ -34,7 +34,7 @@ class BasicLayoutTemplate extends StatelessWidget {
       body: SafeArea(child: body),
       bottomNavigationBar:
           showBottomNav
-              ? BarNavigationBottom(onBottomBarTap: (value){})
+              ? BarNavigationBottom(onNavItemTap: (value){})
               : null,
     );
   }

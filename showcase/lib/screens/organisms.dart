@@ -37,7 +37,7 @@ class Organisms extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(20),
                         color: Colors.white,
-                        child: BarNavigationBottom(onBottomBarTap: () {}),
+                        child: BarNavigationBottom(onNavItemTap: (index) {}),
                       ),
                     ],
                   ),
