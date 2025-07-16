@@ -9,11 +9,12 @@ import 'package:flutter/material.dart';
 class ImageCard extends StatelessWidget {
   /// The URL of the image to display
   final String imageUrl;
+  final double? height;
 
-  const ImageCard({super.key, required this.imageUrl});
+  const ImageCard({super.key, required this.imageUrl,  this.height = 120});
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(imageUrl, width: 150, height: 120,);
+    return Image.network(imageUrl, width: 150, height: height,);
   }
 }
