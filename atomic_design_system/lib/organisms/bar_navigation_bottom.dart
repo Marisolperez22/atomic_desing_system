@@ -45,8 +45,8 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
             1,
           ),
           _buildNavItem(
-            Icons.notifications_none_rounded,
-            Icons.notifications_rounded,
+            Icons.category_outlined,
+            Icons.category_rounded,
             2,
           ),
           _buildNavItem(Icons.person_outline_rounded, Icons.person_rounded, 3),
