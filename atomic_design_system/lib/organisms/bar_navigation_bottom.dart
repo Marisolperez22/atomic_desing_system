@@ -52,7 +52,7 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
             Icons.category_rounded,
             2,
           ),
-          _buildNavItem(Icons.person_outline_rounded, Icons.person_rounded, 3),
+          _buildNavItem(Icons.logout_rounded, Icons.logout_rounded, 3),
         ],
       ),
     );

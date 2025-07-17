@@ -30,7 +30,7 @@ class BasicLayoutTemplate extends StatelessWidget {
         title: 'Fake Store',
         rightIconOnPressed: () {},
         leftIcon: Icons.shopping_bag_outlined,
-        rightIcon:  Icons.search,
+        rightIcon: Icons.search,
         leftIconOnPressed: () {},
       ),
       body: Stack(
@@ -106,7 +106,6 @@ class BasicLayoutTemplate extends StatelessWidget {
                           ),
                       itemCount: 6,
                       itemBuilder: (context, index) {
-                        
                         return GestureDetector(
                           onTap: () {},
                           child: Card(
@@ -134,11 +133,14 @@ class BasicLayoutTemplate extends StatelessWidget {
                                   ),
                                   // Texto
                                   Text(
-                                    'Hola',
+                                    'uiifheriumgher gveri vberh feyf bsu fbrd gieur ghluwe bflsh fugsh dgbr ug shuihdhbv hdfrus vrgb wriushf esb fesw ',
                                     style: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                     ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    softWrap: true,
                                   ),
                                   // Fila con precio e icono
                                   Row(
@@ -182,16 +184,11 @@ class BasicLayoutTemplate extends StatelessWidget {
               ),
             ),
           ),
-        Positioned(
+          Positioned(
             bottom: 30,
             left: 10,
             right: 10,
-            child: BarNavigationBottom(
-              onNavItemTap: (index) {
-               
-                
-              },
-            ),
+            child: BarNavigationBottom(onNavItemTap: (index) {}),
           ),
         ],
       ),

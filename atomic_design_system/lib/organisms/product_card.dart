@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../atoms/image_card.dart';
 
-
 class ProductCard extends StatelessWidget {
   final String price;
   final String rating;
@@ -27,15 +26,14 @@ class ProductCard extends StatelessWidget {
       color: Colors.white,
       margin: const EdgeInsets.all(8), // Margen uniforme
       child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          minWidth: 150, 
-          maxWidth: 200, 
-        ),
+        constraints: const BoxConstraints(minWidth: 150, maxWidth: 200),
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min, // Para que la columna no ocupe más espacio del necesario
+            mainAxisSize:
+                MainAxisSize
+                    .min, // Para que la columna no ocupe más espacio del necesario
             children: [
               // Encabezado con imagen y botón de favoritos
               ImageCard(
@@ -50,8 +48,9 @@ class ProductCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
-                maxLines: 2, // Máximo 2 líneas
-                overflow: TextOverflow.ellipsis, // Puntos suspensivos si el texto es muy largo
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
               ),
               const SizedBox(height: 8),
               // Fila de precio y rating
@@ -91,10 +90,7 @@ class ProductCard extends StatelessWidget {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: addToTheCart,
-                  child: const Text(
-                    'Agregar',
-                    style: TextStyle(fontSize: 14),
-                  ),
+                  child: const Text('Agregar', style: TextStyle(fontSize: 14)),
                 ),
               ),
             ],
