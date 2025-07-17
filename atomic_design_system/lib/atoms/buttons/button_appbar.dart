@@ -23,7 +23,7 @@ class ButtonAppbar extends StatelessWidget {
       style: ButtonStyle(
         // Establecemos el color de fondo
         backgroundColor: WidgetStateProperty.all<Color>(
-          backgroundColor ?? Theme.of(context).primaryColor, // Usar color proporcionado o primaryColor por defecto
+          AtomicSystemColorsFoundation.primaryColor, // Usar color proporcionado o primaryColor por defecto
         ),
         // Hacemos que la forma sea circular
         shape: WidgetStateProperty.all<CircleBorder>(
