@@ -43,8 +43,8 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
         children: [
           _buildNavItem(Icons.home_outlined, Icons.home_rounded, 0),
           _buildNavItem(
-            Icons.shopping_bag_outlined,
-            Icons.shopping_bag_rounded,
+            Icons.help_outline_outlined,
+            Icons.help_outline_outlined,
             1,
           ),
           _buildNavItem(
@@ -53,7 +53,6 @@ class _BarNavigationBottomState extends State<BarNavigationBottom> {
             2,
           ),
           _buildNavItem(Icons.logout_rounded, Icons.logout_rounded, 3),
-          _buildNavItem(Icons.help_outline_outlined, Icons.help_outline_outlined, 4),
 
         ],
       ),
