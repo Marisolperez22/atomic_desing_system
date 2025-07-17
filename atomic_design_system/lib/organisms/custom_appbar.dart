@@ -44,13 +44,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: appBarColor,
       automaticallyImplyLeading: false,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          ButtonAppbar(icon: leftIcon, onPressed: leftIconOnPressed),
-          title is String ? Text(title, style: TextStyle(fontWeight: FontWeight.bold),) : title as Widget,
-          ButtonAppbar(icon: rightIcon, onPressed: rightIconOnPressed),
-        ],
+      title: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ButtonAppbar(icon: leftIcon, onPressed: leftIconOnPressed),
+            title is String ? Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),) : title as Widget,
+            ButtonAppbar(icon: rightIcon, onPressed: rightIconOnPressed),
+          ],
+        ),
       ),
     );
   }

@@ -2,39 +2,43 @@ import 'package:flutter/material.dart';
 
 import '../../foundations/atomic_system_colors_foundation.dart';
 
-class ButtonAppbar extends StatelessWidget {
-  final IconData icon;
-  final void Function()? onPressed;
-  final Color? backgroundColor; // Nuevo parámetro opcional para el color de fondo
+/// This widget provides a standardized icon button with outlined style, designed specifically
+/// for use in application bars. It implements Material Design 3 specifications and integrates
+/// with design system foundations.
 
-  const ButtonAppbar({
-    super.key, 
-    required this.icon, 
-    required this.onPressed,
-    this.backgroundColor, // Hacer el color de fondo configurable
-  });
+/// See also:
+/// - [IconButton], the base widget this component builds upon
+/// - [AtomicSystemColorsFoundation], the design system foundation this depends on
+
+class ButtonAppbar extends StatelessWidget {
+  /// The icon to display inside the button.
+  final IconData icon;
+
+  /// The callback that is called when the button is tapped or otherwise activated.
+  final void Function()? onPressed;
+
+  /// Creates a design-system compliant app bar button.
+
+  const ButtonAppbar({super.key, required this.icon, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      // Quitamos .outlined para tener un botón relleno
-      icon: Icon(icon),
+    return IconButton.outlined(
+      icon: Icon(icon, color: const Color.fromARGB(255, 255, 255, 255),),
       onPressed: onPressed,
       style: ButtonStyle(
-        // Establecemos el color de fondo
         backgroundColor: WidgetStateProperty.all<Color>(
-          AtomicSystemColorsFoundation.primaryColor, // Usar color proporcionado o primaryColor por defecto
+          AtomicSystemColorsFoundation.primaryColor.withOpacity(0.9),
+          
         ),
-        // Hacemos que la forma sea circular
-        shape: WidgetStateProperty.all<CircleBorder>(
-          const CircleBorder(), // Esto crea un botón completamente circular
+        side: WidgetStateProperty.all<BorderSide>(
+          const BorderSide(
+            color: Colors.transparent,
+          ),
         ),
-        // Añadimos padding para controlar el tamaño del círculo
-        padding: WidgetStateProperty.all<EdgeInsets>(const EdgeInsets.all(12)),
-        // Color del icono (puedes ajustarlo según necesites)
-        iconColor: WidgetStateProperty.all<Color>(Colors.white),
-        // Tamaño del icono
-        iconSize: WidgetStateProperty.all<double>(24),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+        ),
       ),
     );
   }
