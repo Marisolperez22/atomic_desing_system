@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class LoginPage extends StatelessWidget {
   final Widget form;
 
@@ -23,7 +24,9 @@ class LoginPage extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child: SingleChildScrollView(child: form),
+                child: SingleChildScrollView(
+                  child: form,
+                ),
               ),
             ),
           ),
